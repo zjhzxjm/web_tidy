@@ -1,0 +1,174 @@
+/*=================================*/
+/* www.jq22.com */
+/*=================================*/
+
+/*====================*/
+/*=== Reset Styles ===*/
+/*====================*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}
+body {
+	line-height:1;
+	color:black;
+	background:white;
+}
+.wrap{
+	width:1120px;
+	margin:0 auto;
+	position:relative;
+}
+table {
+	border-collapse:separate;
+	border-spacing:0;
+}
+caption, th, td {
+	text-align:left;
+	font-weight:normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:"";
+}
+blockquote, q {
+	quotes:"" "";
+}
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+/*===================*/
+/*=== Main Styles ===*/
+/*===================*/
+body {
+	font:14px/1.6 Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+	color:#2d3536;
+	/*background:#e8e0c0 url(images/background.png) repeat;*/
+    text-shadow:0 1px 0 #fff;
+}
+
+a, a:visited {
+	color:#2d3536;
+	text-decoration:none;
+	border-bottom:1px dotted #826a4d;
+}
+a:hover, a:active {
+	color:#9e805c;
+	text-decoration:none;
+}
+
+#dev7link {
+    position:absolute;
+    top:0;
+    left:50px;
+    /*background:url(images/dev7logo.png) no-repeat;*/
+    width:60px;
+    height:67px;
+    border:0;
+    display:block;
+    text-indent:-9999px;
+}
+
+/*====================*/
+/*=== Menu Styles ===*/
+/*====================*/
+.clearfix{
+	margin-top: 10px;
+}
+.clearfix:after{
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+.product_menu .cys {
+	float:left;
+	width:370px;
+	height:230px;
+	background:url(images/menu_cys.jpg) no-repeat 0 0;
+	cursor:pointer;
+}
+.product_menu .cyk {
+	float:left;
+	width:370px;
+	height:230px;
+	background:url(images/menu_cyk.jpg) no-repeat 0 0;
+	margin-left:5px;
+	margin-right:5px;
+	display:inline;
+}
+.product_menu .cy{
+	float:left;
+	width:370px;
+	height:230px;
+	background:url(images/menu_cy.jpg) no-repeat 0 0;
+}
+.product_menu .cys .cys_hover ,.product_menu .cyk .cyk_hover ,.product_menu .cy .cy_hover{
+	display:none;
+}
+.product_menu .cys:hover .cys_hover ,.product_menu .cyk:hover .cyk_hover ,.product_menu .cy:hover .cy_hover{
+	background:#dce6f3;
+	width:370px;
+	height:230px;
+	display:block;
+	text-align:center;
+}
+.product_menu .cys_hover h3 ,.product_menu .cyk_hover h3{
+	height:90px;
+	line-height:90px;
+	color:#666464;
+	font-size:20px;
+}
+.product_menu .cys_hover img ,.product_menu .cyk_hover img{
+	margin:0 auto;
+	display:block;
+}
+.product_menu .cy:hover .cy_hover{
+	background:url(images/menu_cy_hover.jpg) no-repeat 0 0;
+}
+.product_menu .cy:hover .cy_hover h3{
+	color:#6e6e6e;
+	font-size:24px;
+	font-weight:bold;
+	height:54px;
+	line-height:54px;
+	padding-top:140px;
+}
+.product_menu .cy:hover .cy_hover a{
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-ms-border-radius:3px;
+	display:inline-block;
+	background:#00b868;
+	color:#fff;
+	font-size:25px;
+	width:215px;
+	height:45px;
+	line-height:45px;
+}
+
+/*====================*/
+/*=== Other Styles ===*/
+/*====================*/
+.clear {
+	clear:both;
+}
