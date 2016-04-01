@@ -15,30 +15,34 @@
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
 
-
     // Generate data.
     data = [];
-    for (var seriesIndex = 0; seriesIndex < 5; seriesIndex++) {
-        var seriesData = [];
-        for (var i = 0; i < 18; i++) {
-            var cate = [];
-            for (var j = 0; j < 100; j++) {
-                cate.push(Math.random() * 200);
-            }
-            seriesData.push(cate);
-        }
-        data.push(echarts.dataTool.prepareBoxplotData(seriesData));
-    }
-
+        var goodData = [
+                [1,2,3,4,5], //1day
+                [1,2,3], //2day
+                [2,4,6,8,10]
+        ];
+        data.push(echarts.dataTool.prepareBoxplotData(goodData));
+        var interData = [
+                [1,2,3],
+                [1,2,3],
+        ];
+        data.push(echarts.dataTool.prepareBoxplotData(interData));
+        var poor = [
+                [1,2,3,4,5],
+                [1,2,3],
+                [2,4,6,8,10]
+        ];
+        data.push(echarts.dataTool.prepareBoxplotData(poor));
 
     option = {
         title: {
-            text: 'Multiple Categories',
+            text: '细菌含量分布图',
             left: 'center',
         },
         legend: {
             y: '10%',
-            data: ['category0', 'category1', 'category2', 'category3']
+            data: ['好', '一般', '差']
         },
         tooltip: {
             trigger: 'item',
@@ -54,14 +58,14 @@
         },
         xAxis: {
             type: 'category',
-            data: data[0].axisData,
+            data: ['1','2','4'],
             boundaryGap: true,
             nameGap: 30,
             splitArea: {
                 show: true
             },
             axisLabel: {
-                formatter: 'expr {value}'
+                formatter: '{value}天'
             },
             splitLine: {
                 show: false
@@ -70,8 +74,8 @@
         yAxis: {
             type: 'value',
             name: 'Value',
-            min: -400,
-            max: 600,
+            min: -20,
+            max: 40,
             splitArea: {
                 show: false
             }
@@ -94,19 +98,19 @@
         ],
         series: [
             {
-                name: 'category0',
+                name: '好',
                 type: 'boxplot',
                 data: data[0].boxData,
                 tooltip: {formatter: formatter}
             },
             {
-                name: 'category1',
+                name: '一般',
                 type: 'boxplot',
                 data: data[1].boxData,
                 tooltip: {formatter: formatter}
             },
             {
-                name: 'category2',
+                name: '差',
                 type: 'boxplot',
                 data: data[2].boxData,
                 tooltip: {formatter: formatter}
@@ -116,12 +120,12 @@
 
     function formatter(param) {
         return [
-            'Experiment ' + param.name + ': ',
-            'upper: ' + param.data[0],
+            '天数 ' + param.name + '天: ',
+            'lower: ' + param.data[0],
             'Q1: ' + param.data[1],
             'median: ' + param.data[2],
             'Q3: ' + param.data[3],
-            'lower: ' + param.data[4]
+            'upper: ' + param.data[4]
         ].join('<br/>')
     }
 
